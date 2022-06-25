@@ -1,0 +1,32 @@
+WORKSPACE_TMP
+A temporary directory near the workspace that will not be browsable and will not interfere with SCM checkouts. May not initially exist, so be sure to create the directory as needed (e.g., mkdir -p on Linux). Not defined when the regular workspace is a drive root.
+JENKINS_HOME
+The absolute path of the directory assigned on the controller file system for Jenkins to store data.
+JENKINS_URL
+Full URL of Jenkins, like http://server:port/jenkins/ (note: only available if Jenkins URL set in system configuration).
+BUILD_URL
+Full URL of this build, like http://server:port/jenkins/job/foo/15/ (Jenkins URL must be set).
+JOB_URL
+Full URL of this job, like http://server:port/jenkins/job/foo/ (Jenkins URL must be set).
+GIT_COMMIT
+The commit hash being checked out.
+GIT_PREVIOUS_COMMIT
+The hash of the commit last built on this branch, if any.
+GIT_PREVIOUS_SUCCESSFUL_COMMIT
+The hash of the commit last successfully built on this branch, if any.
+GIT_BRANCH
+The remote branch name, if any.
+GIT_LOCAL_BRANCH
+The local branch name being checked out, if applicable.
+GIT_CHECKOUT_DIR
+The directory that the repository will be checked out to. This contains the value set in Checkout to a sub-directory, if used.
+GIT_URL
+The remote URL. If there are multiple, will be GIT_URL_1, GIT_URL_2, etc.
+GIT_COMMITTER_NAME
+The configured Git committer name, if any, that will be used for FUTURE commits from the current workspace. It is read from the Global Config user.name Value field of the Jenkins Configure System page.
+GIT_AUTHOR_NAME
+The configured Git author name, if any, that will be used for FUTURE commits from the current workspace. It is read from the Global Config user.name Value field of the Jenkins Configure System page.
+GIT_COMMITTER_EMAIL
+The configured Git committer email, if any, that will be used for FUTURE commits from the current workspace. It is read from the Global Config user.email Value field of the Jenkins Configure System page.
+GIT_AUTHOR_EMAIL
+The configured Git author email, if any, that will be used for FUTURE commits from the current workspace. It is read from the Global Config user.email Value field of the Jenkins Configure System page.
