@@ -19,23 +19,15 @@ pipeline {
 stages {
     stage('Git checkout'){
       steps {
-        git branch: 'release',
+        git branch: 'main',
         url: 'https://github.com/chinni4321/helloworld.git'
       }
     }
-    stage('Maven build'){
+    stage('maven build'){
       steps {
         sh 'mvn clean install'
       }
     }
-  stage ('Sonarqube Analysis'){
-           steps {
-           withSonarQubeEnv('sonarqube') {
-           sh '''
-           mvn -e -B sonar:sonar -Dsonar.java.source=1.8 -Dsonar.host.url="${sonar_url}" -Dsonar.login="${sonar_username}" -Dsonar.password="${sonar_password}" -Dsonar.sourceEncoding=UTF-8
-           '''
-           }
-         }
-      } 
+  
  }
 }
