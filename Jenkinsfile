@@ -20,7 +20,7 @@ stages {
     stage('Git checkout'){
       steps {
         git branch: 'feature'
-        url: 'https://github.com/chinni4321/helloworld.git'
+        url: 'https://github.com/majjigavasantha/batch-15.git'
       }
     }
     stage('maven build'){
