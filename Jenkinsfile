@@ -19,7 +19,7 @@ pipeline {
 stages {
     stage('Git checkout'){
       steps {
-        git branch: 'feature'
+        git branch: 'feature',
         url: 'https://github.com/majjigavasantha/batch-15.git'
       }
     }
