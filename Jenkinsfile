@@ -3,7 +3,7 @@ pipeline {
 
   tools {
     jdk 'Java8'
-    maven 'Maven3.3.9'
+    maven 'maven'
   }
   
   environment {
@@ -15,14 +15,11 @@ pipeline {
       artifact_version = '4.0.0'
 
  }
- parameters {
-      string(defaultValue: 'master', description: 'Please type any branch name to deploy', name: 'Branch')
- }  
 
 stages {
     stage('Git checkout'){
       steps {
-        git branch: '${Branch}',
+        git branch: 'release',
         url: 'https://github.com/chinni4321/helloworld.git'
       }
     }
