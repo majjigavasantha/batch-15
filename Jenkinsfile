@@ -2,7 +2,7 @@ pipeline {
   agent { label 'master' }
 
   tools {
-    jdk 'Java8'
+    jdk 'java8'
     maven 'maven'
   }
   
@@ -20,7 +20,7 @@ stages {
     stage('Git checkout'){
       steps {
         git branch: 'main',
-        url: 'https://github.com/chinni4321/helloworld.git'
+        url: 'https://github.com/majjigavasantha/batch-15.git'
       }
     }
     stage('maven build'){
