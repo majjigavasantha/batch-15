@@ -23,7 +23,7 @@ stages {
         url: 'https://github.com/chinni4321/helloworld.git'
       }
     }
-    stage('Maven build'){
+    stage('maven build'){
       steps {
         sh 'mvn clean install'
       }
