@@ -19,8 +19,8 @@ pipeline {
 stages {
     stage('Git checkout'){
       steps {
-        git branch: 'develip',
-        url: 'https://github.com/chinni4321/helloworld.git'
+        git branch: 'develop',
+        url: 'https://github.com/majjigavasantha/batch-15.git'
       }
     }
     stage('Maven build'){
