@@ -23,7 +23,7 @@ stages {
         url: 'https://github.com/majjigavasantha/batch-15.git'
       }
     }
-    stage('Maven build'){
+    stage('maven build'){
       steps {
         sh 'mvn clean install'
       }
