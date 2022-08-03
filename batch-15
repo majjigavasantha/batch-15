@@ -8,10 +8,10 @@ pipeline {
   
   environment {
 
-      sonar_url = 'http://10.128.0.23:9000'
+      sonar_url = 'http://10.128.0.3:9000'
       sonar_username = 'admin'
       sonar_password = 'admin'
-      nexus_url = '10.128.0.23:8081'
+      nexus_url = '10.128.0.3:8081'
       artifact_version = '4.0.0'
 
  }
@@ -23,7 +23,7 @@ stages {
     stage('Git checkout'){
       steps {
         git branch: '${Branch}',
-        url: 'https://github.com/chinni4321/helloworld.git'
+        url: 'https://github.com/majjigavasantha/batch-15.git'
       }
     }
     stage('Maven build'){
@@ -49,21 +49,21 @@ stages {
         steps {
           sh '''
           cd ${WORKSPACE}
-          docker build -t gcr.io/able-decorator-354310/helloworld --file=Dockerfile ${WORKSPACE}
+          docker build -t gcr.io/symmetric-lock-357601/helloworld --file=Dockerfile ${WORKSPACE}
           '''
         }
       }
       stage ('Publish Docker Image'){
         steps {
           sh '''
-          docker push gcr.io/able-decorator-354310/helloworld
+          docker push gcr.io/symmetric-lock-357601/helloworld
           '''
         }
       }
       stage ('Deploy to kubernetes'){
         steps{
           script {
-            sh "kubectl config use-context gke_able-decorator-354310_us-central1-c_batch-15"
+            sh "kubectl config use-context gke_symmetric-lock-357601_us-central1-c_batch-16"
             sh "cd ${WORKSPACE}"
             sh "kubectl apply -f '${WORKSPACE}'/kube/deployment.yaml"
             sh "kubectl apply -f '${WORKSPACE}'/kube/service.yaml"
